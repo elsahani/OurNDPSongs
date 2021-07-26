@@ -25,13 +25,15 @@ public class ShowActivity extends AppCompatActivity {
     ArrayAdapter<String> spinnerAdapter;
     Song song;
 
+    CustomAdapter caToDo;
+
     @Override
     protected void onResume() {
         super.onResume();
         DBHelper dbh = new DBHelper(this);
         al.clear();
         al.addAll(dbh.getAllSongs());
-        aa.notifyDataSetChanged();
+        caToDo.notifyDataSetChanged();
 
         years.clear();
         years.addAll(dbh.getYears());
@@ -57,10 +59,10 @@ public class ShowActivity extends AppCompatActivity {
         years = dbh.getYears();
         dbh.close();
 
-        aa = new ArrayAdapter(this, android.R.layout.simple_list_item_1, al);
-        lv.setAdapter(aa);
+        caToDo = new CustomAdapter(this, R.layout.row, al);
+        lv.setAdapter(caToDo);
 
-        aa.notifyDataSetChanged();
+        caToDo.notifyDataSetChanged();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,7 +79,7 @@ public class ShowActivity extends AppCompatActivity {
                 DBHelper dbh = new DBHelper(ShowActivity.this);
                 al.clear();
                 al.addAll(dbh.getAllSongsByStars(5));
-                aa.notifyDataSetChanged();
+                caToDo.notifyDataSetChanged();
 
             }
         });
@@ -91,7 +93,7 @@ public class ShowActivity extends AppCompatActivity {
                 DBHelper dbh = new DBHelper(ShowActivity.this);
                 al.clear();
                 al.addAll(dbh.getAllSongsByYear(Integer.valueOf(years.get(position))));
-                aa.notifyDataSetChanged();
+                caToDo.notifyDataSetChanged();
             }
 
             @Override

@@ -10,7 +10,7 @@ public class Song implements Serializable {
     private int year;
     private int stars;
 
-    public Song (int _id, String title, String singers, int year, int stars){
+    public Song(int _id, String title, String singers, int year, int stars) {
         this._id = _id;
         this.title = title;
         this.singers = singers;
@@ -67,11 +67,12 @@ public class Song implements Serializable {
     @Override
     public String toString() {
         String starsString = "";
-        for(int i = 0; i < stars; i++){
-            starsString += "*";
+        for (int i = 0; i < stars; i++) {
+            starsString += "* ";
         }
-        return title + "\n" + singers + " - " + year + "\n" + starsString;
+        return starsString;
 
     }
+
 }
 
