@@ -1,4 +1,4 @@
-package sg.edu.rp.c346.id20023841.myndpsongslesson10;
+package sg.edu.rp.c346.id20023841.ourndpsongs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 

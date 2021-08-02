@@ -1,4 +1,4 @@
-package sg.edu.rp.c346.id20023841.myndpsongslesson10;
+package sg.edu.rp.c346.id20023841.ourndpsongs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnShowList, btnInsert;
     EditText etSinger, etYear, etTitle;
-    RadioGroup rgRating;
+    //RadioGroup rgRating;
+    RatingBar rb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         etTitle = findViewById(R.id.etTitle);
         etSinger = findViewById(R.id.etSinger);
         etYear = findViewById(R.id.etYear);
-        rgRating = findViewById(R.id.star);
+        //rgRating = findViewById(R.id.star);
+        rb = findViewById(R.id.ratingBarStars);
 
 
         btnShowList.setOnClickListener(new View.OnClickListener() {
@@ -75,23 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int getStars() {
         int stars = 1;
-        switch (rgRating.getCheckedRadioButtonId()) {
-            case R.id.radioButtonOne:
-                stars = 1;
-                break;
-            case R.id.radioButtonTwo:
-                stars = 2;
-                break;
-            case R.id.radioButtonThree:
-                stars = 3;
-                break;
-            case R.id.radioButtonFour:
-                stars = 4;
-                break;
-            case R.id.radioButtonFive:
-                stars = 5;
-                break;
-        }
+        stars =(int)rb.getRating();
         return stars;
     }
 }

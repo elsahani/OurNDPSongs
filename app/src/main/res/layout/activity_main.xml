@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context="sg.edu.rp.c346.id20023841.ourndpsongs.MainActivity">
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -56,42 +56,12 @@
         android:layout_height="wrap_content"
         android:text="@string/stars" />
 
-    <RadioGroup
-        android:id="@+id/star"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButtonOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_1" />
-
-        <RadioButton
-            android:id="@+id/radioButtonTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2" />
-
-        <RadioButton
-            android:id="@+id/radioButtonThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_3" />
-
-        <RadioButton
-            android:id="@+id/radioButtonFour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_4" />
-
-        <RadioButton
-            android:id="@+id/radioButtonFive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_5" />
-    </RadioGroup>
+    <RatingBar
+        android:id="@+id/ratingBarStars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ShowActivity">
+    tools:context="sg.edu.rp.c346.id20023841.ourndpsongs.ShowActivity">
 
     <Button
         android:id="@+id/buttonFilter"

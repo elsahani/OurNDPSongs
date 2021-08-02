@@ -1,4 +1,4 @@
-package sg.edu.rp.c346.id20023841.myndpsongslesson10;
+package sg.edu.rp.c346.id20023841.ourndpsongs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
