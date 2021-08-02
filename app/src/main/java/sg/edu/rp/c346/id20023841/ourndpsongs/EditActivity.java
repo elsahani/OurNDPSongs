@@ -9,14 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
 
     EditText etSongTitle, etSongSinger, etSongYear, etSongID;
     Button btnUpdate, btnDelete, btnCancel;
-    RadioGroup rgStars;
-    RadioButton rb1,rb2,rb3,rb4,rb5;
+    RatingBar rbStars;
+    //RadioGroup rgStars;
+    //RadioButton rb1,rb2,rb3,rb4,rb5;
     Song song;
 
 
@@ -32,12 +34,15 @@ public class EditActivity extends AppCompatActivity {
         btnCancel = findViewById(R.id.buttonCancel);
         btnDelete = findViewById(R.id.buttonDelete);
         btnUpdate = findViewById(R.id.buttonUpdate);
+        rbStars = findViewById(R.id.ratingBarStars3);
+        /*
         rgStars = findViewById(R.id.rgStars);
         rb1 = findViewById(R.id.one);
         rb2 = findViewById(R.id.two);
         rb3 = findViewById(R.id.three);
         rb4 = findViewById(R.id.four);
         rb5 = findViewById(R.id.five);
+         */
 
 
         Intent i = getIntent();
@@ -47,8 +52,9 @@ public class EditActivity extends AppCompatActivity {
         etSongTitle.setText(song.getTitle());
         etSongSinger.setText(song.getSingers());
         etSongYear.setText(song.getYear() + "");
+        rbStars.setRating(song.getStars());
 
-        if(song.getStars()==1){
+        /*if(song.getStars()==1){
             rb1.setChecked(true);
         } else if (song.getStars()==2){
             rb2.setChecked(true);
@@ -58,7 +64,7 @@ public class EditActivity extends AppCompatActivity {
             rb4.setChecked(true);
         } else if (song.getStars()==5) {
             rb5.setChecked(true);
-        }
+        } */
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +98,13 @@ public class EditActivity extends AppCompatActivity {
                 }
                 song.setYear(year);
 
+                /*
                 int selectedRB = rgStars.getCheckedRadioButtonId();
                 RadioButton rb = (RadioButton) findViewById(selectedRB);
                 song.setStars(Integer.parseInt(rb.getText().toString()));
+                */
+
+                song.setStars((int) rbStars.getRating());
                 int result = dbh.updateSong(song);
                 if (result>0){
                     Toast.makeText(EditActivity.this, "Song updated", Toast.LENGTH_SHORT).show();
