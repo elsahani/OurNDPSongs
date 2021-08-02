@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int getStars() {
         int stars = 1;
-        stars =(int)rb.getRating();
+        stars = (int)rb.getRating();
         return stars;
     }
 }

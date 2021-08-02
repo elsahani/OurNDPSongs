@@ -20,7 +20,6 @@ public class ShowActivity extends AppCompatActivity {
     ArrayList<String> years;
     ListView lv;
     Spinner spinner;
-    ArrayAdapter<Song> aa;
     ArrayAdapter<String> spinnerAdapter;
     Song song;
 
